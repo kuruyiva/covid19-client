@@ -1,3 +1,10 @@
+$color-primary-white: #ffffff;
+
+@mixin logotxtthick() {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
 .dimmer {
   position: absolute;
   padding: 1em;
@@ -81,5 +88,79 @@ body {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+.hidden-mobile {
+  display: none;
+}
+.wrapper-go {
+  display: flex;
+  .wrapper-go-right {
+    display: none;
+  }
+}
+
+app-navbar {
+  nav {
+    button {
+      &.text-gray-400 {
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  header{
+    &.bg-white {
+      &.shadow {
+        .py-4 {
+          padding-top: 0rem;
+          padding-bottom: 0em;
+          h2 {
+            display: none;
+          }
+          margin-bottom: -30px;
+        }
+      }
+    }
+  }
+
+  .wrapper-go {
+    display: flex;
+    .wrapper-go-left {
+      .text-gray-600 {
+        display: none;
+      }
+      .text-lg {
+        font-size: 1.0rem;
+      }
+    }
+    .wrapper-go-right {
+      display: initial;
+    }
+  }
+  .hidden-mobile {
+    color: #ffffff;
+    display: initial;
+    @include logotxtthick;
+    margin-left: 10px;
+  }
+  .situation-info-div {
+    .grid-cols-6 {
+      text-align: center;
+      margin: 0 auto;
+      .md\:col-span-2 {
+        grid-column: span 2/span 2 !important;
+        .text-gray-700 {
+          font-size:3.4vw;
+          font-weight: 900;
+        }
+      }
+      .px-6 {
+        padding-left: 0rem;
+        padding-right: 0rem;
+      }
+    }
   }
 }

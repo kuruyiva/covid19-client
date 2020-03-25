@@ -3,11 +3,13 @@
   <app-error *ngIf="error"></app-error>
 
   <div class="overflow-hidden pb-5" *ngIf="data">
-    <div class="mb-10" *ngIf="drc">
-      <div class="px-2 mb-5">
-        <div class="text-grey-700 text-lg font-bold">Situation en RDC </div>
-        <span class="text-gray-600 text-md">Mise à jour : {{ updatedAt }}</span> <br>
-        <span class="text-gray-600 text-md">Actualisation toutes les 3 heures.</span>
+    <div class="mb-10 situation-info-div" *ngIf="drc">
+      <div class="wrapper-go">
+        <div class="px-2 mb-5 wrapper-go-left">
+          <div class="text-grey-700 text-lg font-bold">Situation en RDC </div>
+          <span class="text-gray-600 text-md">Mise à jour : {{ updatedAt }}</span> <br>
+          <span class="text-gray-600 text-md">Actualisation toutes les 3 heures.</span>
+        </div>
       </div>
       <div class="grid grid-cols-6 gap-4">
         <div class="col-span-6 md:col-span-2 lg:col-span-2 px-2">
@@ -42,45 +44,45 @@
         </div>
       </div>
     </div>
-   <div>
-     <div class="px-2 mb-5">
-       <div class="text-lg font-bold">Situation Globale</div>
-       <span class="text-gray-600 text-md">Mise à jour : {{ updatedAt }}</span> <br>
-       <span class="text-gray-600 text-md">Actualisation toutes les 3 heures.</span>
-     </div>
-     <div class="grid grid-cols-6 gap-4">
-       <div class="col-span-6 md:col-span-2 lg:col-span-2 px-2">
-         <div class="min-w-full bg-white rounded overflow-hidden shadow">
-           <div class="px-6 py-4">
-             <div class="text-gray-700 mb-2">Confirmés</div>
-             <p class="font-bold text-xl text-base">
-               {{ data.confirmed.value }}
-             </p>
-           </div>
-         </div>
-       </div>
-       <div class="col-span-6 md:col-span-2 lg:col-span-2 px-2">
-         <div class="min-w-full bg-white rounded overflow-hidden shadow">
-           <div class="px-6 py-4">
-             <div class="text-gray-700 mb-2">Guérisons</div>
-             <p class="font-bold text-xl text-base">
-               {{ data.recovered.value }}
-             </p>
-           </div>
-         </div>
-       </div>
-       <div class="col-span-6 md:col-span-2 lg:col-span-2 px-2">
-         <div class="min-w-full bg-white rounded overflow-hidden shadow">
-           <div class="px-6 py-4">
-             <div class="text-gray-700 mb-2">Morts</div>
-             <p class="font-bold text-xl text-base">
-               {{ data.deaths.value }}
-             </p>
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
+    <div>
+      <div class="px-2 mb-5">
+        <div class="text-lg font-bold">Situation Globale</div>
+        <span class="text-gray-600 text-md">Mise à jour : {{ updatedAt }}</span> <br>
+        <span class="text-gray-600 text-md">Actualisation toutes les 3 heures.</span>
+      </div>
+      <div class="grid grid-cols-6 gap-4">
+        <div class="col-span-6 md:col-span-2 lg:col-span-2 px-2">
+          <div class="min-w-full bg-white rounded overflow-hidden shadow">
+            <div class="px-6 py-4">
+              <div class="text-gray-700 mb-2">Confirmés</div>
+              <p class="font-bold text-xl text-base">
+                {{ data.confirmed.value }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-6 md:col-span-2 lg:col-span-2 px-2">
+          <div class="min-w-full bg-white rounded overflow-hidden shadow">
+            <div class="px-6 py-4">
+              <div class="text-gray-700 mb-2">Guérisons</div>
+              <p class="font-bold text-xl text-base">
+                {{ data.recovered.value }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-6 md:col-span-2 lg:col-span-2 px-2">
+          <div class="min-w-full bg-white rounded overflow-hidden shadow">
+            <div class="px-6 py-4">
+              <div class="text-gray-700 mb-2">Morts</div>
+              <p class="font-bold text-xl text-base">
+                {{ data.deaths.value }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div *ngIf="articles">
       <div class="px-2 mb-5 mt-10">
